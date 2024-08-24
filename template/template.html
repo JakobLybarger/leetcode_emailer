@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>LeetCode Accountability Tracker</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f9f9f9;
+			color: #333;
+			padding: 20px;
+		}
+
+		h1 {
+			font-size: 24px;
+			color: #2c3e50;
+			margin-bottom: 30px;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-top: 20px;
+		}
+
+		th,
+		td {
+			padding: 10px 15px;
+			text-align: left;
+			border-bottom: 1px solid #dddddd;
+		}
+
+		th {
+			background-color: #f2f2f2;
+			font-weight: bold;
+			color: #333;
+		}
+
+		td {
+			background-color: #fafafa;
+		}
+
+		tr:hover td {
+			background-color: #f1f1f1;
+		}
+	</style>
+
+<body>
+	{{ range . }}
+	<h1>{{ .User }} solved {{ .Count }} Problems Today</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Timestamp</th>
+				<th>Status</th>
+				<th>Language</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			{{ range .Submissions }}
+			<tr>
+				<td>{{ .Title }}</td>
+				<td>{{ .Timestamp }}</td>
+				<td>{{ .StatusDisplay }}</td>
+				<td>{{ .Language }}</td>
+			</tr>
+			{{ end }}
+		</tbody>
+	</table>
+	{{ end }}
+</body>
+
+</html>
