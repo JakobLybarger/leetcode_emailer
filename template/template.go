@@ -2,14 +2,17 @@ package template
 
 import (
 	"bytes"
+	"embed"
 	"text/template"
 
 	"github.com/JakobLybarger/leetcode-emailer/leetcode"
 )
 
+//go:embed template.html
+var templateFS embed.FS
+
 func GenerateTemplate() string {
-	file := "./template.html"
-	tmpl, err := template.New(file).ParseFiles(file)
+	tmpl, err := template.ParseFS(templateFS, "template.html")
 	if err != nil {
 		panic(err)
 	}
