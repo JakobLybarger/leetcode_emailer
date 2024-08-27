@@ -52,8 +52,15 @@ func getUserStats(done chan model.LeetCodeResponse, account string) {
 		panic(err)
 	}
 
-	now := time.Now()
-	midnight := time.Date(now.Year(), now.Month(), now.Day(), 0, 0, 0, 0, now.Location()).Unix()
+	cst, err := time.LoadLocation("America/Chicago")
+	if err != nil {
+		panic(err)
+	}
+
+	now := time.Now().In(cst)
+	test := time.Date(now.Year(), now.Month(), now.Day(), now.Hour(), now.Minute(), now.Second(), 0, now.Location())
+
+	midnight := test.Unix()
 
 	var solvedToday []model.Submission
 	for _, submission := range res.Submissions {

@@ -2,7 +2,6 @@ package email
 
 import (
 	"context"
-	"log"
 	"os"
 	"strings"
 
@@ -36,8 +35,6 @@ func email(ctx context.Context, e event.Event) error {
 	if err := d.DialAndSend(m); err != nil {
 		panic(err)
 	}
-
-	log.Printf("Sent email from %s to %s", sender, recipients)
 
 	return nil
 }
