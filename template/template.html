@@ -47,13 +47,12 @@
 
 <body>
 	{{ range . }}
-	<h1>{{ .User }} solved {{ .Count }} Problems Today</h1>
+	<h1>{{ .User }} solved {{ .Count }} {{ if eq .Count 1}}Problem{{ else }}Problems{{ end }} Today</h1>
 
 	<table>
 		<thead>
 			<tr>
 				<th>Title</th>
-				<th>Timestamp</th>
 				<th>Status</th>
 				<th>Language</th>
 			</tr>
@@ -63,7 +62,6 @@
 			{{ range .Submissions }}
 			<tr>
 				<td>{{ .Title }}</td>
-				<td>{{ .Timestamp }}</td>
 				<td>{{ .StatusDisplay }}</td>
 				<td>{{ .Language }}</td>
 			</tr>

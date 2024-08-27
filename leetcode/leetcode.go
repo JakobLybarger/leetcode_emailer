@@ -58,7 +58,7 @@ func getUserStats(done chan model.LeetCodeResponse, account string) {
 	}
 
 	now := time.Now().In(cst)
-	test := time.Date(now.Year(), now.Month(), now.Day(), now.Hour(), now.Minute(), now.Second(), 0, now.Location())
+	test := time.Date(now.Year(), now.Month(), now.Day(), 0, 0, 0, 0, now.Location())
 
 	midnight := test.Unix()
 
