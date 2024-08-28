@@ -52,7 +52,7 @@ func getUserStats(done chan model.LeetCodeResponse, account string) {
 		panic(err)
 	}
 
-	cst, err := time.LoadLocation("America/Chicago")
+	cst, err := time.LoadLocation("America/Los_Angeles")
 	if err != nil {
 		panic(err)
 	}
