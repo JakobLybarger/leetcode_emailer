@@ -49,6 +49,7 @@
 	{{ range . }}
 	<h1>{{ .User }} solved {{ .Count }} {{ if eq .Count 1}}Problem{{ else }}Problems{{ end }} Today</h1>
 
+	{{ if gt .Count 0 }}
 	<table>
 		<thead>
 			<tr>
@@ -69,6 +70,10 @@
 		</tbody>
 	</table>
 	{{ end }}
+	{{ end }}
+
+	<br />
+	<p>If you wish to <b>unsubscribe</b> get in contact with Jakob or just block this email lol</p>
 </body>
 
 </html>
