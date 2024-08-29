@@ -17,7 +17,7 @@ This project is a Golang-based tool designed to help you and your friend stay ac
 
 ### Prerequisites
 
-- [Go](https://golang.org/doc/install) (version 1.16+)
+- [Go](https://golang.org/doc/install) (version 1.21+)
 - [Google Cloud SDK](https://cloud.google.com/sdk/docs/install)
 - A valid Google Cloud account with billing enabled
 - Access to the [alfa-leetcode-api](https://github.com/alfaarghya/alfa-leetcode-api)
